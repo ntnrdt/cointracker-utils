@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "cointracker-utils",
+    "description": "Adds up utils functionalities to the app",
+    "version": "1.0",
+    "icons": {
+        "16": "/images/icon16.png",
+        "32": "/images/icon32.png",
+        "48": "/images/icon48.png",
+        "128": "/images/icon128.png"
+      },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.cointracker.io/*"
+            ],
+            "css": [
+                "main.css"
+            ],
+            "js": [
+                "main.js"
+            ]
+        }
+    ]
+}

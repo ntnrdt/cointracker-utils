@@ -1,0 +1,101 @@
+body.dark-theme {
+    background-color: #00001b !important;
+    color: white;
+    background: #00001b !important;
+}
+
+.dark-theme header,
+.dark-theme footer {
+    background: #00000c !important;
+    color: white;
+}
+
+.dark-theme .card {
+    background-color: #00010c !important;
+    color: white;
+}
+
+.dark-theme tr,
+.dark-theme tr th,
+.dark-theme .bg-light {
+    background-color: #00010c !important;
+}
+
+.dark-theme table tr th {
+    background-color: transparent;
+}
+
+.dark-theme div[class^="UpsellContainer"],
+.dark-theme div[class^="ConnectUpsellContainer"] {
+    background: #00010c !important;
+    color: white !important;
+}
+
+.dark-theme a,
+.dark-theme h1,
+.dark-theme span {
+    color: white !important;
+}
+
+.dark-theme .text-btn-lg,
+.dark-theme .text-body-md,
+.dark-theme .caption-sm th,
+.dark-theme .text-btn-md.text-dark,
+.dark-theme .text-secondary.text-body-md {
+    color: #c0c0c0 !important;
+}
+
+.dark-theme .dropdown-menu {
+    background-color: #00001b !important;
+}
+
+.dark-theme .table {
+    color: white;
+}
+
+.dark-theme .table .rounded th {
+    border-radius: 0 !important;
+}
+
+.dark-theme ul[class^="NavigationMenuList"] div {
+    background-color: #00010c !important;
+    color: white;
+}
+
+.dark-theme ul[class^="NavigationMenuList"] div > :hover {
+    background-color: white !important;
+    color: #00010c !important;
+}
+
+#dark-theme-button-wrapper {
+    background-color: #00010c;
+    border-radius: 50%;
+    bottom: 10px;
+    cursor: pointer;
+    color: white;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    width: 50px;
+}
+
+#dark-theme-button-wrapper svg {
+    color: white;
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+}
+
+.dark-theme #dark-theme-button-wrapper {
+    background-color: white;
+    color: #00010c;
+}
+
+.dark-theme #dark-theme-button-wrapper svg {
+    color: #00010c;
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+}
