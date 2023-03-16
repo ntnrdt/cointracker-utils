@@ -17,6 +17,10 @@ var idsToRetrieve = [];
 
 function setAltCoinsRefreshRate() {
 
+    if (tableData == undefined) {
+        return;
+    }
+
     function createCORSRequest(method, url) {
         var xhr = new XMLHttpRequest();
         if ("withCredentials" in xhr) {
@@ -74,6 +78,10 @@ function setAltCoinsRefreshRate() {
 function setAltCoinsToBeRefreshed() {
     tableData = document.querySelector('.table-responsive.expanded-performance-table table tbody');
 
+    if (tableData == undefined) {
+        return;
+    }
+
     for (var i = 0; i < tableData.childElementCount; i++) {
         let id = tableData.children[i].children[0].dataset.href.split('/')[2];
 
@@ -87,19 +95,26 @@ function setAltCoinsToBeRefreshed() {
     }
 }
 
+function updateSwitchThemeButton(icon) {
+    let themeButton = document.getElementById('dark-theme-button');
+    themeButton.innerHTML = icon;
+}
+
 function changeTheme() {
 
-    let themeButton = document.getElementById('dark-theme-button');
+    let icon = '';
 
     if (document.body.classList.contains('dark-theme')) {
         document.body.classList.remove('dark-theme');
         localStorage.removeItem('theme');
-        themeButton.innerHTML = MOON_SVG;
+        icon = MOON_SVG;
     } else {
         document.body.classList.add('dark-theme');
         localStorage.setItem('theme', 'dark-theme')
-        themeButton.innerHTML = SUN_SVG;
+        icon = SUN_SVG;
     }
+
+    updateSwitchThemeButton(icon);
 }
 
 function addThemeButton() {
@@ -124,11 +139,12 @@ function loadCustomerTheme() {
 
     if (localStorage.getItem('theme') != undefined) {
         document.body.classList.add('dark-theme');
+        updateSwitchThemeButton(SUN_SVG);
     }
 }
 
 document.onreadystatechange = function () {
-    
+
     if (document.readyState == "complete") {
 
         setTimeout(function () {

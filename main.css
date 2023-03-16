@@ -2,12 +2,12 @@
 
 body.dark-theme {
     background-color: #00001b !important;
-    color: white;
     background: #00001b !important;
-    -webkit-transition: background-color .8s ease-out;
-    -moz-transition: background-color .8s ease-out;
-    -o-transition: background-color .8s ease-out;
-    transition: background-color .8s ease-out;
+    color: white;
+    -webkit-transition: background-color 0.8s ease-out;
+    -moz-transition: background-color 0.8s ease-out;
+    -o-transition: background-color 0.8s ease-out;
+    transition: background-color 0.8s ease-out;
 }
 
 .dark-theme header,
@@ -77,8 +77,8 @@ body.dark-theme {
     background-color: #00010c;
     border-radius: 50%;
     bottom: 10px;
-    cursor: pointer;
     color: white;
+    cursor: pointer;
     height: 50px;
     position: fixed;
     right: 10px;
@@ -119,8 +119,8 @@ body.dark-theme {
 }
 
 .dark-theme #react-component-container-performance-page #dropdown-performance-type .dropdown-menu-right {
-    transform: translate3d(-8px, 50px, 0px) !important;
     min-width: 8.6rem !important;
+    transform: translate3d(-8px, 50px, 0px) !important;
 }
 
 .dark-theme
@@ -150,3 +150,35 @@ body.dark-theme {
 }
 
 /* End Performance page */
+
+/* Wallet page */
+
+.dark-theme #accounts-wallets .list-group,
+.dark-theme #accounts-wallets .list-group .list-group-item {
+    background-color: #00001b !important;
+    color: white;
+}
+
+.dark-theme #accounts-wallets .list-group .list-group-item .badge-light {
+    background-color: #3b3b3b !important;
+}
+
+/* End Wallet page */
+
+/* Transactions page */
+
+.dark-theme #root > div {
+    background: rgb(0, 0, 27) !important;
+    color: white;
+    transition: background-color 0.8s ease-out 0s;
+}
+
+.dark-theme #root div[class*="SortDropdownFilterWrapper"] {
+    margin-top: 0px;
+}
+
+.dark-theme #root div[class*="SortDropdownFilterWrapper"] button {
+    padding-right: 15px;
+    border-radius: 5px;
+}
+/* End transactions page */
