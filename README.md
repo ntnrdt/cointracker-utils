@@ -7,4 +7,4 @@ The main goal in here is to have additional features available "in your computer
 
 I hope it's useful to you.
 
-PS: This is covering only the Dashboard, the other pages have not been tested or worked on.
+PS: Not all pages have been covered or tested.
