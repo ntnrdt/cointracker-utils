@@ -1,7 +1,13 @@
+/* General and Dashboard */
+
 body.dark-theme {
     background-color: #00001b !important;
     color: white;
     background: #00001b !important;
+    -webkit-transition: background-color .8s ease-out;
+    -moz-transition: background-color .8s ease-out;
+    -o-transition: background-color .8s ease-out;
+    transition: background-color .8s ease-out;
 }
 
 .dark-theme header,
@@ -99,3 +105,48 @@ body.dark-theme {
     padding: 10px;
     width: 100%;
 }
+
+/* End General and Dashboard */
+
+/* Performance page */
+
+.dark-theme #react-component-container-performance-page #date-picker {
+    margin-right: 1rem;
+}
+
+.dark-theme #react-component-container-performance-page #dropdown-performance-type .btn-light {
+    border-radius: 5px !important;
+}
+
+.dark-theme #react-component-container-performance-page #dropdown-performance-type .dropdown-menu-right {
+    transform: translate3d(-8px, 50px, 0px) !important;
+    min-width: 8.6rem !important;
+}
+
+.dark-theme
+    #react-component-container-performance-page
+    #dropdown-performance-type
+    .dropdown-menu-right
+    .dropdown-item:hover {
+    background-color: white !important;
+    color: #00010c !important;
+}
+
+.dark-theme #react-component-container-performance-page .btn-light,
+.dark-theme #react-component-container-performance-page .btn-light * {
+    color: #00010c !important;
+}
+
+.dark-theme .card.elevated,
+.dark-theme .card.elevated .list-group,
+.dark-theme .card.elevated .list-group .list-group-item {
+    background-color: #00001b !important;
+    color: white;
+}
+
+.dark-theme .card.elevated .card-header > *,
+.dark-theme .card.elevated .list-group .list-group-item h5 {
+    color: white !important;
+}
+
+/* End Performance page */

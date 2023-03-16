@@ -93,9 +93,11 @@ function changeTheme() {
 
     if (document.body.classList.contains('dark-theme')) {
         document.body.classList.remove('dark-theme');
+        localStorage.removeItem('theme');
         themeButton.innerHTML = MOON_SVG;
     } else {
         document.body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark-theme')
         themeButton.innerHTML = SUN_SVG;
     }
 }
@@ -118,10 +120,16 @@ function addThemeButton() {
     });
 }
 
-document.onreadystatechange = function () {
-    if (document.readyState == "complete") {
+function loadCustomerTheme() {
 
-        addThemeButton();
+    if (localStorage.getItem('theme') != undefined) {
+        document.body.classList.add('dark-theme');
+    }
+}
+
+document.onreadystatechange = function () {
+    
+    if (document.readyState == "complete") {
 
         setTimeout(function () {
             setAltCoinsToBeRefreshed();
@@ -129,3 +137,6 @@ document.onreadystatechange = function () {
         }, 1000);
     }
 }
+
+addThemeButton();
+loadCustomerTheme();
