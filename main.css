@@ -63,12 +63,14 @@ body.dark-theme {
     border-radius: 0 !important;
 }
 
-.dark-theme ul[class^="NavigationMenuList"] div {
+.dark-theme ul[class^="NavigationMenuList"] div,
+.dark-theme ul[class*="NavigationMenuList"] li > div {
     background-color: #00010c !important;
     color: white;
 }
 
-.dark-theme ul[class^="NavigationMenuList"] div > :hover {
+.dark-theme ul[class^="NavigationMenuList"] div > :hover,
+.dark-theme ul[class*="NavigationMenuList"] li > div :hover {
     background-color: white !important;
     color: #00010c !important;
 }
@@ -167,6 +169,29 @@ body.dark-theme {
 
 /* Transactions page */
 
+.dark-theme #root div[class*="TransactionsContent"] {
+    background: transparent !important;
+}
+
+.dark-theme #root tr[class*="TransactionsTable__TableRowHeader"] {
+    border: 0px !important;
+}
+
+.dark-theme #root div[class*="FilterContent"] {
+    background-color: #00010c !important;
+    color: white !important;
+}
+
+.dark-theme #root div[class*="CaptionSmall"],
+.dark-theme #root div[class*="FilterContent"] *,
+.dark-theme #root div[class*="TransactionType__Content"] {
+    color: white !important;
+}
+
+.dark-theme #root div[class*="TransactionType__TypeButtonMid"] {
+    color: white !important;
+}
+
 .dark-theme #root > div {
     background: rgb(0, 0, 27) !important;
     color: white;
@@ -182,3 +207,46 @@ body.dark-theme {
     border-radius: 5px;
 }
 /* End transactions page */
+
+/* Pagination */
+
+.dark-theme .pagination .page-item a,
+.dark-theme .pagination .page-item button {
+    background: rgb(0, 0, 12) !important;
+    color: white !important;
+}
+
+.dark-theme .pagination .page-item.active button {
+    background: white !important;
+    color: rgb(0, 0, 12) !important;
+}
+
+/* End Pagination */
+
+/* Modal */
+
+.dark-theme .modal-dialog {
+    box-shadow: 10px 10px 20px 7px #ffffff3d;
+}
+
+.dark-theme .modal-content > div {
+    background-color: #00010c !important;
+    color: white !important;
+}
+
+.dark-theme .modal-content [class*="IntegrationContent"] {
+    background-color: #00010c !important;
+    color: white !important;
+}
+
+.dark-theme .modal-content [class*="IntegrationContent"] h5 {
+    color: white !important;
+}
+
+.dark-theme .modal-content [class*="SearchContainer"],
+.dark-theme .modal-content [class*="SearchContainer"] input {
+    background-color: #00010c !important;
+    color: white !important;
+}
+
+/* End Modal */
