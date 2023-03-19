@@ -15,6 +15,11 @@ var AUTO_UPDATE = [
 var tableData = [];
 var itemsToRetrieve = [];
 var idsToRetrieve = [];
+var idsDecimalPlaces = {
+    "shiba-inu": 6,
+    "solana": 2,
+    "decentraland": 2
+}
 
 // create xmlhttprequest object (no jQuery available)
 function createCORSRequest(method, url) {
@@ -52,7 +57,8 @@ function setAltCoinsRefreshRate() {
 
                 for (var i = 0; i < itemsToRetrieve.length; i++) {
 
-                    let price = '$' + parseFloat(responseJson[itemsToRetrieve[i].id].usd);
+                    let currency = itemsToRetrieve[i].id;
+                    let price = '$' + parseFloat(responseJson[currency].usd).toFixed(idsDecimalPlaces[currency]);
                     let ele = tableData.children[itemsToRetrieve[i].index].children[1].children[0];
 
                     ele.classList.remove('blink-price-down', 'blink-price-up');
@@ -99,11 +105,10 @@ function setAltCoinsToBeRefreshed() {
     }
 }
 
-// on performance page, gets the average cost + shib price and udpates the grid, similar can be done for other coins.
-function setShibOnPerformancePage() {
+// sets up shib price in dashboard and performance page
+function setShibPriceAndAvgPrice() {
 
-    if (window.location.href.indexOf('performance') <= 0 ||
-        localStorage.getItem('api-key') == undefined) {
+    if (localStorage.getItem('api-key') == undefined) {
         return;
     }
 
@@ -130,8 +135,10 @@ function setShibOnPerformancePage() {
             let priceEle = tableData.children[itemsToRetrieve[i].index].children[1].children[0];
             priceEle.innerText = '$' + parseFloat(shibData.currency.price).toFixed(6);
 
-            let avgCostEle = tableData.children[itemsToRetrieve[i].index].children[3].children[0].children[1];
-            avgCostEle.innerText = '$ ' + parseFloat(shibData.averageCostBasis).toFixed(6) + ' per SHIB';
+            if (window.location.href.indexOf('performance') > 0) {
+                let avgCostEle = tableData.children[itemsToRetrieve[i].index].children[3].children[0].children[1];
+                avgCostEle.innerText = '$ ' + parseFloat(shibData.averageCostBasis).toFixed(6) + ' per SHIB';
+            }
         }
     };
 
@@ -213,7 +220,7 @@ document.onreadystatechange = function () {
             setAltCoinsToBeRefreshed();
             setAltCoinsRefreshRate();
 
-            setShibOnPerformancePage();
+            setShibPriceAndAvgPrice();
         }, 1000);
     }
 }
